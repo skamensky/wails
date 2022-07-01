@@ -526,7 +526,7 @@ gboolean Fullscreen(gpointer data) {
 	GdkRectangle m = getCurrentMonitorGeometry(window);
 	int scale = getCurrentMonitorScaleFactor(window);
 	SetMinMaxSize(window, 0, 0, m.width * scale, m.height * scale);
-
+	printf("m.width=%i,scale=%i,m.height=%i\n",m.width,scale,m.height);
 	gtk_window_fullscreen(window);
 
 	return G_SOURCE_REMOVE;
