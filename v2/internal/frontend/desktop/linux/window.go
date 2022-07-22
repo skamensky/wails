@@ -815,6 +815,9 @@ func (w *Window) Run(url string) {
 	defer C.free(unsafe.Pointer(_url))
 	C.gtk_widget_show_all(w.asGTKWidget())
 	w.Center()
+	if w.appoptions.Fullscreen {
+		w.Fullscreen()
+	}
 	switch w.appoptions.WindowStartState {
 	case options.Fullscreen:
 		w.Fullscreen()
